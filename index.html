@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168794116-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-168794116-1');
+    </script>
+
+    <title>Random Decision Maker</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="icon" href="https://anfernyvanta.com/assets/av3.png">
+    <script type="text/javascript" src="scripts/main.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Random Decision Maker"/>
+    <meta property="og:image" content="https://anfernyvanta.com/tools/random-decision-maker/images/meta.png"/>
+    <meta name="twitter:card" content="summary_large_image"></meta>
+    <meta property="twitter:title" content="Random Decision Maker"/>
+    <meta property="twitter:image" content="https://anfernyvanta.com/tools/random-decision-maker/images/meta.png"/>
+</head>
+<body>
+    <div id="main-container">
+        <div id="options-container">
+            <div id="options-values-container"></div>
+            <div class="option">
+                <input type="text" id="option-input"><button id="btn-add">+</button>
+            </div>
+        </div>
+
+        <div id="options-toggle-container">
+            <button id="btn-show-options">Show Choices</button>
+            <button id="btn-hide-options">Hide Choices</button>
+        </div>
+
+        <div id="wheel-container" class="center">
+            <div id="arrow"></div>
+            <canvas id="canvas" width="450" height="450"></canvas>
+        </div>
+
+        <div id="btn-spin-container">
+            <button id="btn-spin" class="center">
+                SPIN
+            </button>
+        </div>
+    </div>
+
+    <div id="pop-up-container">
+        <div id="pop-up-message-container">
+            <p id="pop-up-message"></p>
+        </div>
+        <div id="pop-up-message-container-arrow"></div>
+        <div id="pop-up-img"></div>
+    </div>
+</body>
+</html>

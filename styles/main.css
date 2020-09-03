@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    position: fixed;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#main-container {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*
+ * Options
+ */
+
+#options-toggle-container {
+    padding-top: 40px;
+}
+
+#options-toggle-container button {
+    padding: 5px 15px 5px 15px;
+}
+
+#options-container {
+    position: absolute;
+    top: 100px;
+    z-index: 2;
+
+    background: rgba(50, 50, 50, 0.5);
+    padding: 60px 80px 60px 80px;
+
+    border-radius: 30px;
+
+    transition-duration: .6s;
+}
+
+#btn-show-options {
+    display: none;
+}
+
+.option {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+input {
+    margin-right: 10px;
+    height: 26px;
+    font-size: 20px;
+    text-align: center;
+
+    background-color: white;
+    border: 1px solid gray;
+}
+
+#btn-add {
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.btn-remove {
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+/*
+ * Wheel
+ */
+
+#wheel-container {
+    padding: 50px;
+
+    /* border: 1px solid black; */
+}
+
+#arrow {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 40px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-top: 40px solid #f00;
+    z-index: 1;
+}
+
+#canvas {
+    transition-duration: 3s;
+    transition-timing-function: ease;
+}
+
+/*
+ * Spin
+ */
+
+#btn-spin-container {
+    padding: 30px;
+}
+
+#btn-spin {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: rgb(228, 1, 1);
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+
+    border: none;
+    box-shadow: 0 6px #999;
+    outline: none;
+}
+
+#btn-spin:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+}
+
+
+@keyframes spinning {
+    0%{
+        transform: rotate(0deg);
+   }
+
+   100%{
+        transform: rotate(360deg);
+   }
+ }
+
+
+ /* Pop up */
+
+#pop-up-container {
+    padding: 5px;
+
+    height: 200px;
+
+    position: absolute;
+    z-index: 3;
+
+    top: 45%;
+    right: 30%;
+    left: 70%;
+
+    opacity: 0;
+}
+
+#pop-up-message-container {
+    font-size: 12px;
+    font-family: 'Verdana';
+    background: rgba(250, 250, 250, 0.9);
+    width: 180px;
+    border: 1px solid black;
+    color: black;
+
+    padding: 8px;
+}
+
+#pop-up-message {
+    margin: 0;
+}
+
+#pop-up-message-container-arrow {
+    width: 1px;
+    border-width: 5px;
+    border-style: solid;
+    position: relative;
+    left: 35px;
+    border-color:black transparent transparent transparent;
+}
+
+#pop-up-img {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+}
+
+@keyframes showPopUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(300px, 0, 0);
+    }
+
+    100% {
+        opacity: 100;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes removePopUp {
+    0% {
+        opacity: 100;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(300px, 0, 0);
+    }
+}
+
+@media (max-width: 550px) {
+    #canvas {
+        height: 300px;
+        width: 300px;
+    }
+
+    #arrow {
+        top: 30px;
+    }
+
+    #options-container {
+        padding: 40px 40px 40px 40px;
+    }
+
+    #pop-up-container {
+        right: 60%;
+        left: 40%;
+    }
+
+    #wheel-container {
+        padding: 20px;
+    }
+
+    #btn-spin-container {
+        padding-top: 0px;
+    }
+}
